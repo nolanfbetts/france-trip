@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 
@@ -29,11 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="w-full flex justify-center gap-8 py-6 border-b mb-8">
-          <a href="/" className="font-semibold hover:underline">Home</a>
-          <a href="/travelers" className="font-semibold hover:underline">Travelers</a>
-          <a href="/map" className="font-semibold hover:underline">Map</a>
-          <a href="/hotels" className="font-semibold hover:underline">Hotels</a>
-          <a href="/travel-times" className="font-semibold hover:underline">Travel Times</a>
+          <Link href="/" className="font-semibold hover:underline">Home</Link>
+          <Link href="/travelers" className="font-semibold hover:underline">Travelers</Link>
+          <Link href="/map" className="font-semibold hover:underline">Map</Link>
+          <Link href="/hotels" className="font-semibold hover:underline">Hotels</Link>
+          <Link href="/travel-times" className="font-semibold hover:underline">Travel Times</Link>
         </nav>
         {children}
       </body>

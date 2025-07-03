@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { stops } from '@/data/trip';
+import type { ComponentType } from 'react';
 
 // Dynamic import to avoid SSR issues
 const TripMapComponent = () => {
-  const [MapContainer, setMapContainer] = useState<any>(null);
-  const [TileLayer, setTileLayer] = useState<any>(null);
-  const [Marker, setMarker] = useState<any>(null);
-  const [Popup, setPopup] = useState<any>(null);
+  const [MapContainer, setMapContainer] = useState<ComponentType<any> | null>(null);
+  const [TileLayer, setTileLayer] = useState<ComponentType<any> | null>(null);
+  const [Marker, setMarker] = useState<ComponentType<any> | null>(null);
+  const [Popup, setPopup] = useState<ComponentType<any> | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
