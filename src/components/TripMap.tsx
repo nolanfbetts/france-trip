@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Dynamic import of react-leaflet components requires 'any' for generic compatibility.
 'use client';
 
 import { useEffect, useState } from 'react';
