@@ -64,7 +64,7 @@ export default function TravelersPage() {
 
       {filteredTravelers.length === 0 && searchTerm && (
         <div className="text-center py-8">
-          <div className="text-gray-400 text-lg">No travelers found matching "{searchTerm}"</div>
+          <div className="text-gray-400 text-lg">No travelers found matching &quot;{searchTerm}&quot;</div>
           <button
             onClick={() => setSearchTerm("")}
             className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
