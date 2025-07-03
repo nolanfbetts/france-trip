@@ -69,12 +69,21 @@ export default function Home() {
               {travelers.map((traveler) => (
                 <div key={traveler.name} className="border-l-4 border-blue-200 pl-3">
                   <div className="font-semibold text-gray-900">{traveler.name}</div>
-                  <div className="text-sm text-gray-800">
-                    {traveler.flight.airline} {traveler.flight.flightNumber}
-                  </div>
-                  <div className="text-sm text-gray-700">
-                    {traveler.flight.from} → {traveler.flight.to}
-                  </div>
+                  {traveler.flights.length > 0 && (
+                    <>
+                      <div className="text-sm text-gray-800">
+                        {traveler.flights[0].airline} {traveler.flights[0].flightNumber}
+                      </div>
+                      <div className="text-sm text-gray-700">
+                        {traveler.flights[0].from} → {traveler.flights[0].to}
+                      </div>
+                      {traveler.flights.length > 1 && (
+                        <div className="text-xs text-gray-600">
+                          +{traveler.flights.length - 1} more flight{traveler.flights.length > 2 ? 's' : ''}
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
               ))}
             </div>

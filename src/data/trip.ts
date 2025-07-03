@@ -1,13 +1,15 @@
+export type Flight = {
+  airline: string;
+  flightNumber: string;
+  departure: string;
+  arrival: string;
+  from: string;
+  to: string;
+};
+
 export type Traveler = {
   name: string;
-  flight: {
-    airline: string;
-    flightNumber: string;
-    departure: string;
-    arrival: string;
-    from: string;
-    to: string;
-  };
+  flights: Flight[];
 };
 
 export type Stop = {
@@ -43,181 +45,268 @@ export type TravelTime = {
 export const travelers: Traveler[] = [
   {
     name: "Robert Betts",
-    flight: {
-      airline: "Air France",
-      flightNumber: "AF123",
-      departure: "2024-07-01T10:00:00",
-      arrival: "2024-07-01T18:00:00",
-      from: "JFK",
-      to: "CDG",
-    },
+    flights: [
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 1786",
+        departure: "2025-09-23T16:32:00",
+        arrival: "2025-09-23T18:08:00",
+        from: "PIT",
+        to: "BOS",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 33",
+        departure: "2025-09-23T20:07:00",
+        arrival: "2025-09-24T09:15:00",
+        from: "BOS",
+        to: "CDG",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 34",
+        departure: "2025-10-13T11:15:00",
+        arrival: "2025-10-13T13:16:00",
+        from: "CDG",
+        to: "BOS",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 2185",
+        departure: "2025-10-13T19:15:00",
+        arrival: "2025-10-13T21:10:00",
+        from: "BOS",
+        to: "PIT",
+      },
+    ],
   },
   {
     name: "Paulette Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 1786",
+        departure: "2025-09-23T16:32:00",
+        arrival: "2025-09-23T18:08:00",
+        from: "PIT",
+        to: "BOS",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 33",
+        departure: "2025-09-23T20:07:00",
+        arrival: "2025-09-24T09:15:00",
+        from: "BOS",
+        to: "CDG",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 34",
+        departure: "2025-10-13T11:15:00",
+        arrival: "2025-10-13T13:16:00",
+        from: "CDG",
+        to: "BOS",
+      },
+      {
+        airline: "Jet Blue",
+        flightNumber: "B6 2185",
+        departure: "2025-10-13T19:15:00",
+        arrival: "2025-10-13T21:10:00",
+        from: "BOS",
+        to: "PIT",
+      },
+    ],
   },
   {
     name: "Brandon Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Amanda Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Bennett Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Alden Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Cody Brenner",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Francesca Brenner",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Nolan Betts",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "Delta",
+        flightNumber: "DL123",
+        departure: "2024-07-01T08:00:00",
+        arrival: "2024-07-01T10:30:00",
+        from: "SFO",
+        to: "JFK",
+      },
+      {
+        airline: "Air France",
+        flightNumber: "AF456",
+        departure: "2024-07-01T14:00:00",
+        arrival: "2024-07-01T22:00:00",
+        from: "JFK",
+        to: "CDG",
+      },
+    ],
   },
   {
     name: "Maggie Wang",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Scott Holden",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Penny Holden",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Fred Pugliano",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Frank Pugliano",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Susan Pugliano",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
   {
     name: "Sarah Pugliano",
-    flight: {
-      airline: "TBD",
-      flightNumber: "TBD",
-      departure: "2024-07-01T11:30:00",
-      arrival: "2024-07-01T19:30:00",
-      from: "TBD",
-      to: "TBD",
-    },
+    flights: [
+      {
+        airline: "TBD",
+        flightNumber: "TBD",
+        departure: "2024-07-01T11:30:00",
+        arrival: "2024-07-01T19:30:00",
+        from: "TBD",
+        to: "TBD",
+      },
+    ],
   },
-
 ];
 
 export const stops: Stop[] = [
