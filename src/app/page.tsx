@@ -1,5 +1,5 @@
-import { travelers, stops, hotels, travelTimes } from '@/data/trip';
-import { Plane, MapPin, Hotel, Clock } from 'lucide-react';
+import { travelers, stops, hotels, travelTimes, events, reservations } from '@/data/trip';
+import { Plane, MapPin, Hotel, Clock, Calendar } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -32,6 +32,11 @@ export default function Home() {
             <Clock className="w-8 h-8 mx-auto mb-2 text-orange-600" />
             <div className="text-2xl font-bold text-orange-600">{travelTimes.length}</div>
             <div className="text-sm text-gray-700">Travel Segments</div>
+          </div>
+          <div className="bg-pink-50 p-6 rounded-lg text-center">
+            <Calendar className="w-8 h-8 mx-auto mb-2 text-pink-600" />
+            <div className="text-2xl font-bold text-pink-600">{events.length + reservations.length}</div>
+            <div className="text-sm text-gray-700">Events & Reservations</div>
           </div>
         </div>
 
@@ -93,7 +98,7 @@ export default function Home() {
         {/* Quick Actions */}
         <div className="bg-gray-900 p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-4 text-white">Quick Access</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <a href="/travelers" className="bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-700 hover:shadow-md transition-shadow text-center text-white hover:bg-gray-700">
               <Plane className="w-6 h-6 mx-auto mb-2 text-blue-400" />
               <div className="font-medium">View All Travelers</div>
@@ -109,6 +114,10 @@ export default function Home() {
             <a href="/travel-times" className="bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-700 hover:shadow-md transition-shadow text-center text-white hover:bg-gray-700">
               <Clock className="w-6 h-6 mx-auto mb-2 text-orange-400" />
               <div className="font-medium">Travel Times</div>
+            </a>
+            <a href="/events" className="bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-700 hover:shadow-md transition-shadow text-center text-white hover:bg-gray-700">
+              <Calendar className="w-6 h-6 mx-auto mb-2 text-pink-400" />
+              <div className="font-medium">Events</div>
             </a>
           </div>
         </div>

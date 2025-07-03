@@ -50,6 +50,7 @@ export default function NavBar() {
         <Link href="/map" className="font-semibold hover:underline block w-full text-center py-2 sm:inline-block sm:w-auto sm:py-0 sm:mx-4" onClick={closeMenu}>Map</Link>
         <Link href="/hotels" className="font-semibold hover:underline block w-full text-center py-2 sm:inline-block sm:w-auto sm:py-0 sm:mx-4" onClick={closeMenu}>Hotels</Link>
         <Link href="/travel-times" className="font-semibold hover:underline block w-full text-center py-2 sm:inline-block sm:w-auto sm:py-0 sm:mx-4" onClick={closeMenu}>Travel Times</Link>
+        <Link href="/events" className="font-semibold hover:underline block w-full text-center py-2 sm:inline-block sm:w-auto sm:py-0 sm:mx-4" onClick={closeMenu}>Events</Link>
       </div>
     </nav>
   );

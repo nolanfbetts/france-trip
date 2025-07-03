@@ -42,6 +42,34 @@ export type TravelTime = {
   notes?: string;
 };
 
+export type Event = {
+  id: string;
+  name: string;
+  location: string;
+  date: string;
+  time: string;
+  description: string;
+  type: "restaurant" | "museum" | "tour" | "activity" | "transport" | "other";
+  confirmationNumber?: string;
+  price?: string;
+  notes?: string;
+  website?: string;
+};
+
+export type Reservation = {
+  id: string;
+  name: string;
+  location: string;
+  date: string;
+  time: string;
+  type: "restaurant" | "museum" | "tour" | "activity" | "transport" | "other";
+  confirmationNumber?: string;
+  partySize?: number;
+  price?: string;
+  notes?: string;
+  website?: string;
+};
+
 export const travelers: Traveler[] = [
   {
     name: "Robert Betts",
@@ -689,5 +717,210 @@ export const travelTimes: TravelTime[] = [
     mode: "taxi/metro/walk",
     duration: "15m",
     notes: "Final night in Paris.",
+  },
+];
+
+export const events: Event[] = [
+  {
+    id: "louvre-museum",
+    name: "Louvre Museum",
+    location: "Paris",
+    date: "2025-09-25",
+    time: "09:00",
+    description: "Visit the world's largest art museum",
+    type: "museum",
+    price: "€17",
+    notes: "Skip-the-line tickets recommended",
+    website: "https://www.louvre.fr/en",
+  },
+  {
+    id: "eiffel-tower",
+    name: "Eiffel Tower",
+    location: "Paris",
+    date: "2025-09-25",
+    time: "14:00",
+    description: "Iconic Paris landmark",
+    type: "activity",
+    price: "€26",
+    notes: "Book in advance to avoid long queues",
+    website: "https://www.toureiffel.paris/en",
+  },
+  {
+    id: "versailles-palace",
+    name: "Palace of Versailles",
+    location: "Versailles",
+    date: "2025-09-26",
+    time: "10:00",
+    description: "Royal palace and gardens",
+    type: "museum",
+    price: "€20",
+    notes: "Includes access to gardens and Trianon",
+    website: "https://en.chateauversailles.fr/",
+  },
+  {
+    id: "beaune-wine-tasting",
+    name: "Beaune Wine Tasting",
+    location: "Beaune",
+    date: "2025-09-30",
+    time: "15:00",
+    description: "Burgundy wine tasting experience",
+    type: "activity",
+    price: "€45",
+    notes: "Includes 6 wine tastings and cheese pairing",
+  },
+  {
+    id: "avignon-palace",
+    name: "Palais des Papes",
+    location: "Avignon",
+    date: "2025-10-01",
+    time: "11:00",
+    description: "Medieval papal palace",
+    type: "museum",
+    price: "€12",
+    notes: "Historic center of Avignon",
+    website: "https://www.palais-des-papes.com/en/",
+  },
+  {
+    id: "nice-promenade",
+    name: "Promenade des Anglais",
+    location: "Nice",
+    date: "2025-10-02",
+    time: "16:00",
+    description: "Famous seaside promenade",
+    type: "activity",
+    price: "Free",
+    notes: "Perfect for sunset walk",
+  },
+  {
+    id: "lyon-food-tour",
+    name: "Lyon Food Tour",
+    location: "Lyon",
+    date: "2025-10-03",
+    time: "18:00",
+    description: "Culinary capital of France tour",
+    type: "tour",
+    price: "€85",
+    notes: "Includes 6 food stops and wine",
+  },
+  {
+    id: "mont-st-michel-tour",
+    name: "Mont Saint-Michel Guided Tour",
+    location: "Mont Saint-Michel",
+    date: "2025-10-07",
+    time: "14:00",
+    description: "Medieval abbey and village",
+    type: "tour",
+    price: "€35",
+    notes: "2-hour guided tour of the abbey",
+  },
+];
+
+export const reservations: Reservation[] = [
+  {
+    id: "le-comptoir-du-relais",
+    name: "Le Comptoir du Relais",
+    location: "Paris",
+    date: "2025-09-24",
+    time: "19:30",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-001",
+    notes: "Traditional French bistro in Saint-Germain",
+    website: "https://www.hotel-paris-relais-saint-germain.com/en/restaurant",
+  },
+  {
+    id: "l-ami-louis",
+    name: "L'Ami Louis",
+    location: "Paris",
+    date: "2025-09-25",
+    time: "20:00",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-002",
+    notes: "Famous for roast chicken and foie gras",
+  },
+  {
+    id: "la-tour-d-argent",
+    name: "La Tour d'Argent",
+    location: "Paris",
+    date: "2025-10-11",
+    time: "19:00",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-003",
+    price: "€200-300 per person",
+    notes: "Michelin-starred restaurant with Seine views",
+    website: "https://www.latourdargent.com/",
+  },
+  {
+    id: "le-chateaubriand",
+    name: "Le Chateaubriand",
+    location: "Paris",
+    date: "2025-10-12",
+    time: "20:30",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-004",
+    price: "€85 tasting menu",
+    notes: "Modern French cuisine, tasting menu only",
+  },
+  {
+    id: "beaune-restaurant",
+    name: "Restaurant Loiseau des Vignes",
+    location: "Beaune",
+    date: "2025-09-29",
+    time: "19:00",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-005",
+    price: "€120 per person",
+    notes: "Michelin-starred restaurant in Beaune",
+    website: "https://www.bernard-loiseau.com/en/restaurants/loiseau-des-vignes",
+  },
+  {
+    id: "nice-restaurant",
+    name: "Le Chantecler",
+    location: "Nice",
+    date: "2025-10-02",
+    time: "20:00",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-006",
+    price: "€150 per person",
+    notes: "Two Michelin stars, Mediterranean cuisine",
+  },
+  {
+    id: "lyon-restaurant",
+    name: "Paul Bocuse",
+    location: "Lyon",
+    date: "2025-10-03",
+    time: "19:30",
+    type: "restaurant",
+    partySize: 14,
+    confirmationNumber: "RES-2025-007",
+    price: "€180 per person",
+    notes: "Legendary restaurant of Paul Bocuse",
+    website: "https://www.bocuse.fr/en/",
+  },
+  {
+    id: "car-rental-strasbourg",
+    name: "Enterprise Car Rental",
+    location: "Strasbourg",
+    date: "2025-09-28",
+    time: "18:00",
+    type: "transport",
+    confirmationNumber: "S75L9Y",
+    price: "$1,151.03",
+    notes: "Peugeot 5008 or similar, 7 passengers, unlimited mileage. Pick up at Strasbourg Gare.",
+  },
+  {
+    id: "car-return-paris",
+    name: "Enterprise Car Rental Return",
+    location: "Paris",
+    date: "2025-10-10",
+    time: "18:00",
+    type: "transport",
+    confirmationNumber: "S75L9Y",
+    notes: "Drop off at 181 Bd Vincent Auriol, Paris, FRA, PARIS.",
   },
 ]; 
